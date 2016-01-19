@@ -283,6 +283,12 @@ class SlackBot extends Adapter
     channel = @client.getChannelGroupOrDMByName envelope.room
     channel.setTopic strings.join "\n"
 
+  typing: (channel) =>
+    @client._send({
+      "type": "typing",
+      "channel": channel
+    }
+
   customMessage: (data) =>
 
     channelName = if data.channel
