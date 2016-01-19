@@ -288,7 +288,7 @@ class SlackBot extends Adapter
 
     @client._send({
       "type": "typing",
-      "channel": channel
+      "channel": channel.id
     })
 
   customMessage: (data) =>
